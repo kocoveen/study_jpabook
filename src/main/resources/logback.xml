@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [ %thread{10} ]
+                %cyan(%logger{20}) : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.hibernate.SQL" level="info"/>
+
+    <!-- hibernate 5 버전에서는 org.hibernate.type.descriptor.sql 였는데 -->
+    <!-- hibernate 6 버전부터는 org.hibernate.orm.jdbc.bind 로 변경되었습니다. -->
+    <logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
