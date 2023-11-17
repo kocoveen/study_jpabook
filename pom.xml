@@ -13,5 +13,63 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
+    <!-- 추가된 태그 -->
+    <dependencies>
+        <!-- Spring Boot 3.1.5 의 Version Dependecy 참고 -->
+        <!-- 필수 라이브러리 -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.13.Final</version>
+        </dependency>
+
+        <!-- Spring Boot 3.1.2 의 Version Dependecy 참고 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-hikaricp</artifactId>
+            <version>6.2.13.Final</version>
+        </dependency>
+
+        <!-- Spring Boot 3.1.2 의 Version Dependecy 참고 -->
+        <!-- slf4j-api 2.0.7 버전과 호환 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.11</version>
+        </dependency>
+
+        <!-- 자신이 설치한 h2 데이터베이스의 버전과 통일 -->
+        <!-- 필수 라이브러리. (DB Client 는 당연히 필수임) -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.214</version>
+        </dependency>
+
+        <!-- 롬복은 그냥 최신 버전으로 함 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+        </dependency>
+
+        <!-- QueryDsl -->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+            <version>5.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+
+        <!-- QueryDsl (Annotation Processor 없어도 Q 클래스 생성) -->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-apt</artifactId>
+            <version>5.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+
+    </dependencies>
+
 </project>
