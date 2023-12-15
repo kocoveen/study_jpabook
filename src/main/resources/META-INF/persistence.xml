@@ -4,7 +4,24 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
-    <persistence-unit name="demo">
+    <!-- hello.practice 에서 사용 -->
+    <persistence-unit name="practice">
+        <!-- 수동 클래스 추가 -->
+        <class>hello.practice.domain.Member</class>
+        <class>hello.practice.domain.Category</class>
+        <class>hello.practice.domain.Delivery</class>
+        <!--        <class>hello.practice.domain.DeliveryStatus</class>-->
+        <class>hello.practice.domain.Order</class>
+        <!--        <class>hello.practice.domain.OrderStatus</class>-->
+        <class>hello.practice.domain.OrderItem</class>
+        <class>hello.practice.domain.item.Item</class>
+        <class>hello.practice.domain.item.Album</class>
+        <class>hello.practice.domain.item.Book</class>
+        <class>hello.practice.domain.item.Movie</class>
+
+        <!-- 수동으로 등록 엔티티만 허용되도록 -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
         <!-- https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0#a12384 참고 -->
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
@@ -17,13 +34,87 @@
             <property name="jakarta.persistence.query.timeout" value="100"/>
 			-->
 
-            <property name="hibernate.dialect"    value="org.hibernate.dialect.H2Dialect" />
-            <property name="hibernate.show_sql"   value="true" />
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.dialect"          value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.show_sql"         value="true" />
+            <property name="hibernate.format_sql"       value="true" />
+            <property name="hibernate.highlight_sql"    value="true"/>
             <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
             <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy"/>
+
             <property name="hibernate.jdbc.batch_size" value="10"/>
         </properties>
     </persistence-unit>
+
+    <!-- hello.basic 에서 사용 -->
+    <persistence-unit name="basic">
+        <!-- 수동 클래스 추가 -->
+        <class>hello.basic.domain.Member</class>
+
+        <!-- 수동으로 등록 엔티티만 허용되도록 -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <!-- https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0#a12384 참고 -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:tcp://localhost/~/db/study/study_jpabook/test" />
+            <property name="jakarta.persistence.jdbc.user"   value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <!-- ( 선택 세팅 )
+            <property name="jakarta.persistence.lock.timeout" value="100"/>
+            <property name="jakarta.persistence.query.timeout" value="100"/>
+			-->
+
+            <property name="hibernate.dialect"          value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.show_sql"         value="true" />
+            <property name="hibernate.format_sql"       value="true" />
+            <property name="hibernate.highlight_sql"    value="true"/>
+            <property name="hibernate.use_sql_comments" value="true" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
+            <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy"/>
+
+            <property name="hibernate.jdbc.batch_size" value="10"/>
+        </properties>
+    </persistence-unit>
+
+    <!-- hello.example 에서 사용 -->
+    <persistence-unit name="example">
+        <!-- 수동 클래스 추가 -->
+        <class>hello.example.domain.Member</class>
+        <class>hello.example.domain.Team</class>
+
+        <!-- 수동으로 등록 엔티티만 허용되도록 -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <!-- https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0#a12384 참고 -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:h2:tcp://localhost/~/db/study/study_jpabook/test" />
+            <property name="jakarta.persistence.jdbc.user"   value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <!-- ( 선택 세팅 )
+            <property name="jakarta.persistence.lock.timeout" value="100"/>
+            <property name="jakarta.persistence.query.timeout" value="100"/>
+			-->
+
+            <property name="hibernate.dialect"          value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.show_sql"         value="true" />
+            <property name="hibernate.format_sql"       value="true" />
+            <property name="hibernate.highlight_sql"    value="true"/>
+            <property name="hibernate.use_sql_comments" value="true" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
+            <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy"/>
+
+            <property name="hibernate.jdbc.batch_size" value="10"/>
+        </properties>
+    </persistence-unit>
+
 </persistence>
