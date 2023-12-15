@@ -24,14 +24,14 @@
             <version>6.2.13.Final</version>
         </dependency>
 
-        <!-- Spring Boot 3.1.2 의 Version Dependecy 참고 -->
+        <!-- Spring Boot 3.1.5 의 Version Dependecy 참고 -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-hikaricp</artifactId>
             <version>6.2.13.Final</version>
         </dependency>
 
-        <!-- Spring Boot 3.1.2 의 Version Dependecy 참고 -->
+        <!-- Spring Boot 3.1.5 의 Version Dependecy 참고 -->
         <!-- slf4j-api 2.0.7 버전과 호환 -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -68,6 +68,22 @@
             <artifactId>querydsl-apt</artifactId>
             <version>5.0.0</version>
             <classifier>jakarta</classifier>
+        </dependency>
+
+        <!-- 테스트 JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 테스트 AssertJ -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

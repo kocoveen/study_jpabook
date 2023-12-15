@@ -12,11 +12,11 @@
     <logger name="org.hibernate.SQL" level="info"/>
 
     <!-- hibernate 5 버전에서는 org.hibernate.type.descriptor.sql 였는데 -->
-    <!-- hibernate 6 버전부터는 org.hibernate.orm.jdbc.bind 로 변경되었습니다. -->
+    <!-- hibernate 6 버전부터는 org.hibernate.orm.jdbc.bind 로 변경 -->
     <logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
 
     <root level="info">
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="CONSOLE"/> <!-- Console에 로그를 출력하고자 할 때 사용 -->
     </root>
 
 </configuration>
